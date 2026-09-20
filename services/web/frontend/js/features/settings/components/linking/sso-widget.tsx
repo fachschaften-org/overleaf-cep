@@ -88,7 +88,7 @@ export function SSOLinkingWidget({
           <LinkingStatus status="error" description={errorMessage} />
         ) : null}
       </div>
-      {providerId === 'fachschaften' ? (
+      {providerId === 'fachschaften' ? null : (
         <div>
           <ActionButton
             titleId={providerId}
@@ -98,7 +98,7 @@ export function SSOLinkingWidget({
             onUnlinkClick={handleUnlinkClick}
           />
         </div>
-      ) : null}
+      )}
       <UnlinkConfirmModal
         title={title}
         show={showModal}
