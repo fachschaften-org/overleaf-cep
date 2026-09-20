@@ -21,13 +21,13 @@ fi
 echo "✓ Found source SVGs"
 
 # 2. Generate Favicons
-cp logo.svg favicon.svg
-python3 generate_favicons.py favicon.svg
+cp logo.svg img/favicon.svg
+python3 generate_favicons.py img/favicon.svg
 
 # 3. Create Black/White/Grey versions
 echo "Creating black/white versions..."
-python3 create_sw_versions.py logo.svg logo_sw.svg "#000000"
-python3 create_sw_versions.py logo.svg mask-favicon.svg "#000000"
+python3 create_sw_versions.py logo.svg img/logo_sw.svg "#000000"
+python3 create_sw_versions.py logo.svg img/mask-favicon.svg "#000000"
 python3 create_sw_versions.py logo_full.svg img/ol-brand/overleaf-black.svg "#000000"
 python3 create_sw_versions.py logo.svg img/ol-brand/overleaf-o-white.svg "#FFFFFF"
 python3 create_sw_versions.py logo_full.svg img/ol-brand/overleaf-white.svg "#FFFFFF"
@@ -39,12 +39,12 @@ python3 generate_icons.py logo.svg
 
 # 5. Generate additional logos (FIX: Moved up so logo-horizontal.png exists before copying)
 echo "Generating logo-horizontal.png from logo_full.svg..."
-python3 generate_additional_logos.py logo_full.svg logo-horizontal.png 410 180 --export-area-drawing
+python3 generate_additional_logos.py logo_full.svg img/logo-horizontal.png 410 180 --export-area-drawing
 
 # 6. Final File Operations (Copying generated assets to destination)
 echo "Finalizing assets..."
-cp -f overleaf_og_logo.png img/ol-brand/
-cp -f logo-horizontal.png img/ol-brand/
+cp -f img/overleaf_og_logo.png img/ol-brand/
+cp -f img/logo-horizontal.png img/ol-brand/
 cp -f logo.svg img/ol-brand/overleaf-o.svg
 cp -f logo_full.svg img/ol-brand/overleaf.svg
 cp -f logo_full.svg img/ol-brand/overleaf-a-ds-solution-mallard.svg

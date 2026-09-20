@@ -153,7 +153,7 @@ def generate_icons(svg_file):
     for filename, width, height, background in icons:
         command = [
             "inkscape",
-            f"--export-filename={filename}",
+            f"--export-filename=img/{filename}",
             f"--export-width={width}",
             f"--export-height={height}",
             background,
@@ -168,15 +168,15 @@ def generate_icons(svg_file):
     print(f"\n{success_count}/{len(icons)} PNG icons generated successfully\n")
     
     # Generate favicon.ico using ImageMagick
-    if check_file_exists("favicon-32x32.png"):
+    if check_file_exists("img/favicon-32x32.png"):
         if IMAGEMAGICK_CMD is None:
             print("\n✗ Cannot generate favicon.ico: no ImageMagick command detected")
             return False
 
         command = [
             IMAGEMAGICK_CMD,
-            "favicon-32x32.png",
-            "favicon.ico"
+            "img/favicon-32x32.png",
+            "img/favicon.ico"
         ]
         
         if run_command(command, "Generating favicon.ico"):

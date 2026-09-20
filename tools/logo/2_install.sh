@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-cp -f *.png ../../services/web/public/
-cp -f *.svg ../../services/web/public/
-cp -f *.ico ../../services/web/public/
+cp -f img/*.png ../../services/web/public/
+cp -f img/*.svg ../../services/web/public/
+cp -f img/*.ico ../../services/web/public/
 
 cp -f img/ol-brand/*.png ../../services/web/public/img/ol-brand/
 cp -f img/ol-brand/*.svg ../../services/web/public/img/ol-brand/
