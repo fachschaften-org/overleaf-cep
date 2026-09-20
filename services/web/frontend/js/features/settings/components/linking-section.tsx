@@ -209,7 +209,7 @@ function SSOLinkingWidgetContainer({
   const { t } = useTranslation()
   const { unlink } = useSSOContext()
 
-  let description = subscription.provider.descriptionKey ||
+  let description = subscription.provider.descriptionKey ??
     `${t('login_with_service', { service: subscription.provider.name, })}.`
   switch (subscription.providerId) {
     case 'collabratec':
