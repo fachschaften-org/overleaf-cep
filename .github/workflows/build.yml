@@ -1,0 +1,122 @@
+# Vibe-translated from `.gitlab-ci.yml`
+
+name: Docker
+
+on:
+  push:
+    branches:
+      - main
+      - "**"
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Log in to GHCR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # Equivalent of CI_COMMIT_REF_SLUG
+      - name: Set image variables
+        id: vars
+        shell: bash
+        run: |
+          REF_SLUG="${GITHUB_REF_NAME//\//-}"
+
+          echo "ref_slug=${REF_SLUG}" >> "$GITHUB_OUTPUT"
+
+          if [[ "${GITHUB_REF_NAME}" == "main" ]]; then
+            echo "base_tag=main" >> "$GITHUB_OUTPUT"
+            echo "app_tag=main" >> "$GITHUB_OUTPUT"
+          else
+            echo "base_tag=${REF_SLUG}" >> "$GITHUB_OUTPUT"
+            echo "app_tag=${REF_SLUG}" >> "$GITHUB_OUTPUT"
+          fi
+
+      # ------------------------------------------------------------
+      # Base image
+      # ------------------------------------------------------------
+
+      - name: Build base image
+        run: |
+          if [[ "${GITHUB_REF_NAME}" == "main" ]]; then
+            docker build \
+              --cache-from "${REGISTRY}/${IMAGE_NAME}/base:main" \
+              --build-arg BUILDKIT_INLINE_CACHE=1 \
+              -t "${REGISTRY}/${IMAGE_NAME}/base:main" \
+              -t "${REGISTRY}/${IMAGE_NAME}/base:latest" \
+              -f "${GITHUB_WORKSPACE}/server-ce/Dockerfile-base" \
+              "${GITHUB_WORKSPACE}"
+          else
+            docker build \
+              --cache-from "${REGISTRY}/${IMAGE_NAME}/base:main" \
+              --cache-from "${REGISTRY}/${IMAGE_NAME}/base:${{ steps.vars.outputs.base_tag }}" \
+              --build-arg BUILDKIT_INLINE_CACHE=1 \
+              -t "${REGISTRY}/${IMAGE_NAME}/base:${{ steps.vars.outputs.base_tag }}" \
+              -f "${GITHUB_WORKSPACE}/server-ce/Dockerfile-base" \
+              "${GITHUB_WORKSPACE}"
+          fi
+
+      - name: Push base image
+        run: |
+          if [[ "${GITHUB_REF_NAME}" == "main" ]]; then
+            docker push "${REGISTRY}/${IMAGE_NAME}/base:main"
+            docker push "${REGISTRY}/${IMAGE_NAME}/base:latest"
+          else
+            docker push "${REGISTRY}/${IMAGE_NAME}/base:${{ steps.vars.outputs.base_tag }}"
+          fi
+
+      # ------------------------------------------------------------
+      # Application image
+      # ------------------------------------------------------------
+
+      - name: Build application image
+        run: |
+          if [[ "${GITHUB_REF_NAME}" == "main" ]]; then
+            docker build \
+              --cache-from "${REGISTRY}/${IMAGE_NAME}:main" \
+              --build-arg BUILDKIT_INLINE_CACHE=1 \
+              --build-arg OVERLEAF_BASE_TAG="${REGISTRY}/${IMAGE_NAME}/base:main" \
+              --build-arg MONOREPO_REVISION="${GITHUB_SHA}" \
+              -t "${REGISTRY}/${IMAGE_NAME}:main" \
+              -t "${REGISTRY}/${IMAGE_NAME}:latest" \
+              -f "${GITHUB_WORKSPACE}/server-ce/Dockerfile" \
+              "${GITHUB_WORKSPACE}"
+          else
+            docker build \
+              --cache-from "${REGISTRY}/${IMAGE_NAME}:main" \
+              --cache-from "${REGISTRY}/${IMAGE_NAME}:${{ steps.vars.outputs.app_tag }}" \
+              --build-arg BUILDKIT_INLINE_CACHE=1 \
+              --build-arg OVERLEAF_BASE_TAG="${REGISTRY}/${IMAGE_NAME}/base:${{ steps.vars.outputs.base_tag }}" \
+              --build-arg MONOREPO_REVISION="${GITHUB_SHA}" \
+              -t "${REGISTRY}/${IMAGE_NAME}:${{ steps.vars.outputs.app_tag }}" \
+              -f "${GITHUB_WORKSPACE}/server-ce/Dockerfile" \
+              "${GITHUB_WORKSPACE}"
+          fi
+
+      - name: Push application image
+        run: |
+          if [[ "${GITHUB_REF_NAME}" == "main" ]]; then
+            docker push "${REGISTRY}/${IMAGE_NAME}:main"
+            docker push "${REGISTRY}/${IMAGE_NAME}:latest"
+          else
+            docker push "${REGISTRY}/${IMAGE_NAME}:${{ steps.vars.outputs.app_tag }}"
+          fi
