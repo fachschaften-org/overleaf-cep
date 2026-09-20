@@ -26,7 +26,7 @@ const OIDCAuthenticationManager = {
       } else {
         const adminClaim = profile[attAdmin] || profile._json?.[attAdmin]
         logger.warn('OIDC login: admin claim', { attAdmin, valAdmin, adminClaim, profileJSON: profile._json, profile })
-        isAdmin = (adminClaim === valAdmin)
+        isAdmin = (adminClaim == valAdmin)
       }
     }
     const oidcUserData = null // Possibly it can be used later
