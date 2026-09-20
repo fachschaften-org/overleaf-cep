@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 cp -f *.png ../../services/web/public/
 cp -f *.svg ../../services/web/public/
 cp -f *.ico ../../services/web/public/
