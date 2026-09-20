@@ -91,7 +91,7 @@ export function SSOLinkingWidget({
       <div>
         <ActionButton
           titleId={providerId}
-          unlinkDisabled={unlinkRequestInflight || providerId === 'fachschaften'}
+          unlinkRequestInflight={unlinkRequestInflight}
           accountIsLinked={linked}
           linkPath={`${linkPath}?intent=link`}
           onUnlinkClick={handleUnlinkClick}
@@ -108,7 +108,7 @@ export function SSOLinkingWidget({
 }
 
 type ActionButtonProps = {
-  unlinkDisabled: boolean
+  unlinkRequestInflight: boolean
   accountIsLinked?: boolean
   linkPath: string
   onUnlinkClick: () => void
@@ -116,7 +116,7 @@ type ActionButtonProps = {
 }
 
 function ActionButton({
-  unlinkDisabled,
+  unlinkRequestInflight,
   accountIsLinked,
   linkPath,
   onUnlinkClick,
@@ -125,7 +125,7 @@ function ActionButton({
   const { t } = useTranslation()
   const linkTextId = `${titleId}-link`
 
-  if (unlinkDisabled) {
+  if (unlinkRequestInflight) {
     return (
       <OLButton variant="danger-ghost" disabled>
         {t('unlinking')}
