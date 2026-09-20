@@ -89,7 +89,6 @@ const OIDCAuthenticationController = {
     let user
     try {
       user = await OIDCAuthenticationManager.promises.findOrCreateUser(profile, auditLog)
-      logger.warn('OIDC login successful', { user: user, id: user._id, fromKnownDevice: fromKnownDevice, email: profile.emails[0].value, is_admin: user.is_admin, profile: profile })
     } catch (error) {
       logger.debug({ email : profile.emails[0].value }, `OIDC login failed: ${error}`)
       return {
