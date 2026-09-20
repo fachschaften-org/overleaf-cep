@@ -1,6 +1,6 @@
 function FachschaftenLogo() {
   return (
-    <svg width="40px" height="40px" viewBox="0 0 1080 1080" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <svg width="40px" height="40px" viewBox="0 0 1080 1080" version="1.1">
         <g id="fsorg-icon-color-tight" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
             <g id="FSorg-Icon-Color" transform="translate(52.7344, 0)" fill-rule="nonzero">
                 <g id="Group">
