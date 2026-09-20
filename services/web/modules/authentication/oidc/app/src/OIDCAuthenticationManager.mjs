@@ -1,5 +1,6 @@
 import crypto from 'node:crypto'
 import Settings from '@overleaf/settings'
+import logger from '@overleaf/logger'
 import UserCreator from '../../../../../app/src/Features/User/UserCreator.mjs'
 import ThirdPartyIdentityManager from '../../../../../app/src/Features/User/ThirdPartyIdentityManager.mjs'
 import { ParallelLoginError } from '../../../../../app/src/Features/Authentication/AuthenticationErrors.mjs'
