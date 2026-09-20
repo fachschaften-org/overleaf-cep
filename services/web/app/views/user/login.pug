@@ -8,7 +8,7 @@ block content
 		.container
 			.row
 				.col-lg-6.offset-lg-3.col-xl-4.offset-xl-4
-					.page-header
+					.page-header.text-center
 						if login_support_title
 							h1 !{login_support_title}
 						else
@@ -23,7 +23,7 @@ block content
 							| Zur Nutzung brauchst du einen Fachschaften.org-Account.
 					if settings.oidc && settings.oidc.enable
 						.actions(style='margin-top: 30px;')
-							.btn.btn-primary.mt-2(
+							a.button.btn-primary.btn(
 								href='/oidc/login',
 								style="width: 100%;"
 								data-ol-disabled-inflight
