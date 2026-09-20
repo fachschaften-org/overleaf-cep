@@ -88,15 +88,17 @@ export function SSOLinkingWidget({
           <LinkingStatus status="error" description={errorMessage} />
         ) : null}
       </div>
-      <div>
-        <ActionButton
-          titleId={providerId}
-          unlinkRequestInflight={unlinkRequestInflight}
-          accountIsLinked={linked}
-          linkPath={`${linkPath}?intent=link`}
-          onUnlinkClick={handleUnlinkClick}
-        />
-      </div>
+      {providerId === 'fachschaften' ? (
+        <div>
+          <ActionButton
+            titleId={providerId}
+            unlinkRequestInflight={unlinkRequestInflight}
+            accountIsLinked={linked}
+            linkPath={`${linkPath}?intent=link`}
+            onUnlinkClick={handleUnlinkClick}
+          />
+        </div>
+      ) : null}
       <UnlinkConfirmModal
         title={title}
         show={showModal}
