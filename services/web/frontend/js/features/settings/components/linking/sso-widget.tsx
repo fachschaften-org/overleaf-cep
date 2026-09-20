@@ -5,6 +5,7 @@ import IEEELogo from '../../../../shared/svgs/ieee-logo'
 import GoogleLogo from '../../../../shared/svgs/google-logo'
 import OrcidLogo from '../../../../shared/svgs/orcid-logo'
 import OpenIDLogo from '../../../../shared/svgs/openid-logo'
+import FachschaftenLogo from '../../../../shared/svgs/fachschaften-logo'
 import LinkingStatus from './status'
 import OLButton from '@/shared/components/ol/ol-button'
 import {
@@ -20,6 +21,7 @@ const providerLogos: { readonly [p: string]: JSX.Element } = {
   google: <GoogleLogo />,
   orcid: <OrcidLogo />,
   oidc: <OpenIDLogo />,
+  fachschaften: <FachschaftenLogo />,
 }
 
 type SSOLinkingWidgetProps = {
