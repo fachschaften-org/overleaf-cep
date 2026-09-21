@@ -297,7 +297,7 @@
 
 .form-text {
   .form-control[disabled] ~ & {
-    color: var(--content-disabled);
+    color: var(--content-disabled) !important;
   }
 
   .form-text-inner {

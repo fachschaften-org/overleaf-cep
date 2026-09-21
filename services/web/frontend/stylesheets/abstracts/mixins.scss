@@ -230,8 +230,8 @@
 }
 
 @mixin input-disabled-styles {
-  background-color: $input-disabled-bg;
-  border-color: $input-disabled-border-color;
+  background-color: $input-disabled-bg !important;
+  border-color: $input-disabled-border-color !important;
 }
 
 @mixin full-viewport-height {
