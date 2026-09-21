@@ -1,0 +1,267 @@
+images:
+  doc/logo.png:
+    source: logo_full
+    resolution: 900x350
+  services/web/public/android-chrome-192x192.png:
+    source: logo
+    resolution: 192x192
+  services/web/public/android-chrome-512x512.png:
+    source: logo
+    resolution: 512x512
+  services/web/public/apple-touch-icon.png:
+    source: logo
+    filter: [bg_square_white]
+    resolution: 180x180
+  services/web/public/favicon-16x16.png:
+    source: logo
+    filter: [bg_circle_white]
+    resolution: 16x16
+  services/web/public/favicon-32x32.png:
+    source: logo
+    filter: [bg_circle_white]
+    resolution: 32x32
+  services/web/public/favicon-compiled.svg:
+    source: logo
+    filter: [bg_circle_white, overlay_compiled]
+    resolution: 16x16
+  services/web/public/favicon-compiling.svg:
+    source: logo
+    filter: [bg_circle_white, overlay_compiling]
+    resolution: 16x16
+  services/web/public/favicon-error.svg:
+    source: logo
+    filter: [bg_circle_white, overlay_error]
+    resolution: 16x16
+  services/web/public/favicon.ico:
+    source: logo
+    filter: [bg_circle_white]
+    resolution: 32x32
+  services/web/public/favicon.svg:
+    source: logo
+    filter: [bg_circle_white]
+    resolution: 16x16
+  services/web/public/mask-favicon.svg:
+    source: logo
+    filter: [color_mask]
+    resolution: 700x700
+  services/web/public/img/ol-brand/email-logo@2x.png:
+    source: logo_full
+    resolution: 277x80
+  services/web/public/img/ol-brand/logo-horizontal.png:
+    source: logo_full
+    resolution: 410x180
+  services/web/public/img/ol-brand/overleaf-a-ds-solution-mallard.svg:
+    source: logo_full
+    resolution: 425x192
+  services/web/public/img/ol-brand/overleaf-black.svg:
+    source: logo_full
+    filter: [color_black]
+    resolution: 129x38
+  services/web/public/img/ol-brand/overleaf-green.svg:
+    source: logo_full
+    resolution: 130x40
+  services/web/public/img/ol-brand/overleaf-o-dark.svg:
+    source: logo
+    resolution: 136x157
+  services/web/public/img/ol-brand/overleaf-o-grey.svg:
+    source: logo
+    filter: [color_grey]
+    resolution: 136x157
+  services/web/public/img/ol-brand/overleaf-o-white.svg:
+    source: logo
+    filter: [color_white]
+    resolution: 136x157
+  services/web/public/img/ol-brand/overleaf-o.svg:
+    source: logo
+    resolution: 136x157
+  services/web/public/img/ol-brand/overleaf-white.svg:
+    source: logo_full
+    filter: [color_white]
+    resolution: 542x157
+  services/web/public/img/ol-brand/overleaf.svg:
+    source: logo_full
+    resolution: 542x157
+  services/web/public/img/ol-brand/overleaf_og_logo.png:
+    source: logo
+    resolution: 256x256
+  services/web/public/img/overleaf-partner/overleaf-greygreen-410.png:
+    source: logo_full
+    resolution: 410x120
+  services/web/public/img/overleaf-partner/overleaf-white-410.png:
+    source: logo_full
+    filter: [color_white]
+    resolution: 410x120
+  services/web/frontend/js/shared/svgs/overleaf-a-ds-solution-mallard-dark.svg:
+    source: logo_full
+    resolution: 425x192
+  services/web/frontend/js/shared/svgs/overleaf-a-ds-solution-mallard.svg:
+    source: logo_full
+    resolution: 425x192
+  services/web/frontend/js/shared/svgs/overleaf-black.svg:
+    source: logo_full
+    filter: [color_black]
+    resolution: 129x38
+  services/web/frontend/js/shared/svgs/overleaf-green.svg:
+    source: logo_full
+    resolution: 104x30
+  services/web/frontend/js/shared/svgs/overleaf-white.svg:
+    source: logo_full
+    filter: [color_white]
+    resolution: 542x157
+  services/web/frontend/js/shared/svgs/overleaf-logo.svg:
+    source: logo
+    resolution: 104x120
+  services/web/frontend/js/shared/svgs/overleaf.svg:
+    source: logo_full
+    resolution: 542x157
+
+ignored_images:
+  doc/screenshot.png
+
+  services/web/public/sl-apple-touch-icon-precomposed.png
+  services/web/public/sl-favicon.ico
+  services/web/public/sl-mask-favicon.svg
+  services/web/public/sl-touch-icon-192x192.png
+
+  services/web/public/img/1p.gif
+  services/web/public/img/check-circle-blue-filled.svg
+  services/web/public/img/check-circle-blue.svg
+  services/web/public/img/ciam-check-green.svg
+  services/web/public/img/enago.png
+  services/web/public/img/fa-check-green.svg
+  services/web/public/img/faileupload.png
+  services/web/public/img/portal-default.jpg
+  services/web/public/img/review-icon-sprite-ol.png
+  services/web/public/img/review-icon-sprite-ol@2x.png
+  services/web/public/img/review-icon-sprite.png
+  services/web/public/img/review-icon-sprite@2x.png
+  services/web/public/img/screen.png
+  services/web/public/img/screen@2x.png
+  services/web/public/img/sparkle-2-stars.svg
+  services/web/public/img/spellcheck-underline.png
+  services/web/public/img/spellcheck-underline@2x.png
+  services/web/public/img/spinner.gif
+  services/web/public/img/sprite.png
+  services/web/public/img/template-preview-placeholder.png
+  services/web/public/img/template-thumbnail-placeholder.png
+
+  services/web/public/img/ol-brand/email-file-icon@2x.png
+  services/web/public/img/ol-brand/email-footer-tagline@2x.png
+
+  services/web/public/img/website-redesign/add-notes-round.svg
+  services/web/public/img/website-redesign/admin-hub-asset.png
+  services/web/public/img/website-redesign/advanced-reference-search-asset.png
+  services/web/public/img/website-redesign/arrow-green.svg
+  services/web/public/img/website-redesign/biotech.svg
+  services/web/public/img/website-redesign/black-board.png
+  services/web/public/img/website-redesign/book_5.svg
+  services/web/public/img/website-redesign/building-compliance-round.svg
+  services/web/public/img/website-redesign/cern-hero.png
+  services/web/public/img/website-redesign/certified-round.svg
+  services/web/public/img/website-redesign/check-in-blue-circle.svg
+  services/web/public/img/website-redesign/check-in-green-circle.svg
+  services/web/public/img/website-redesign/commenting-poster.png
+  services/web/public/img/website-redesign/commenting.png
+  services/web/public/img/website-redesign/compiling-poster.png
+  services/web/public/img/website-redesign/compliance-round.svg
+  services/web/public/img/website-redesign/cs1-intro.png
+  services/web/public/img/website-redesign/customer-stories-1.png
+  services/web/public/img/website-redesign/customer-stories-2.png
+  services/web/public/img/website-redesign/customer-stories-2a.png
+  services/web/public/img/website-redesign/customer-stories-3.png
+  services/web/public/img/website-redesign/customer-stories-3a.png
+  services/web/public/img/website-redesign/customer-stories-4.png
+  services/web/public/img/website-redesign/customer-stories-5.png
+  services/web/public/img/website-redesign/customer-stories-6.png
+  services/web/public/img/website-redesign/customer-stories-7.png
+  services/web/public/img/website-redesign/customer-stories-7a.png
+  services/web/public/img/website-redesign/customer-stories-8.png
+  services/web/public/img/website-redesign/customer-story-2-hero.png
+  services/web/public/img/website-redesign/customer-story-2-img-1.png
+  services/web/public/img/website-redesign/customer-story-2-img-2.png
+  services/web/public/img/website-redesign/customer-story-3-hero.png
+  services/web/public/img/website-redesign/customer-story-4-hero.png
+  services/web/public/img/website-redesign/customer-story-4-img-1.png
+  services/web/public/img/website-redesign/customer-story-5-hero.png
+  services/web/public/img/website-redesign/customer-story-6-hero.png
+  services/web/public/img/website-redesign/customer-story-7-hero.png
+  services/web/public/img/website-redesign/customer-story-8-content.png
+  services/web/public/img/website-redesign/customer-story-8-hero.png
+  services/web/public/img/website-redesign/draw.svg
+  services/web/public/img/website-redesign/edit-document-round.svg
+  services/web/public/img/website-redesign/edit_note.svg
+  services/web/public/img/website-redesign/editor-pdf-asset.png
+  services/web/public/img/website-redesign/editor-pdf-video-poster.png
+  services/web/public/img/website-redesign/features-universities-hero.png
+  services/web/public/img/website-redesign/function.svg
+  services/web/public/img/website-redesign/group-round.svg
+  services/web/public/img/website-redesign/keyboard.png
+  services/web/public/img/website-redesign/live-tv-round.svg
+  services/web/public/img/website-redesign/local-library-round.svg
+  services/web/public/img/website-redesign/lock-round.svg
+  services/web/public/img/website-redesign/mansion.png
+  services/web/public/img/website-redesign/overleaf-pattern-purple.png
+  services/web/public/img/website-redesign/picture_as_pdf.svg
+  services/web/public/img/website-redesign/preview-round.svg
+  services/web/public/img/website-redesign/preview.svg
+  services/web/public/img/website-redesign/school-round.svg
+  services/web/public/img/website-redesign/school.svg
+  services/web/public/img/website-redesign/science-lab.png
+  services/web/public/img/website-redesign/scientist-doll.png
+  services/web/public/img/website-redesign/shield-round.svg
+  services/web/public/img/website-redesign/sticky-tag-enterprises.svg
+  services/web/public/img/website-redesign/sticky-tag-features.svg
+  services/web/public/img/website-redesign/sticky-tag-register.svg
+  services/web/public/img/website-redesign/sticky-tag-universities.svg
+  services/web/public/img/website-redesign/table-generator-poster.png
+  services/web/public/img/website-redesign/template-journal.svg
+  services/web/public/img/website-redesign/template-presentation.svg
+  services/web/public/img/website-redesign/template-report.svg
+  services/web/public/img/website-redesign/template-resume.svg
+  services/web/public/img/website-redesign/template-theses.svg
+  services/web/public/img/website-redesign/tikz-asset.png
+  services/web/public/img/website-redesign/visual-editor-poster.png
+  services/web/public/img/website-redesign/vscode.png
+  services/web/public/img/website-redesign/webinar-asset.png
+  services/web/public/img/website-redesign/gallery/academic-journal.svg
+  services/web/public/img/website-redesign/gallery/bibliography.svg
+  services/web/public/img/website-redesign/gallery/book.svg
+  services/web/public/img/website-redesign/gallery/calendar.svg
+  services/web/public/img/website-redesign/gallery/cv.svg
+  services/web/public/img/website-redesign/gallery/formal-letter.svg
+  services/web/public/img/website-redesign/gallery/homework.svg
+  services/web/public/img/website-redesign/gallery/newsletter.svg
+  services/web/public/img/website-redesign/gallery/poster.svg
+  services/web/public/img/website-redesign/gallery/presentation.svg
+  services/web/public/img/website-redesign/gallery/report.svg
+  services/web/public/img/website-redesign/gallery/thesis.svg
+
+  services/web/public/static/partners/caltech-library.gif
+  services/web/public/static/partners/stanford-building.jpg
+
+  services/web/frontend/js/shared/svgs/ai-sparkle-text.svg
+  services/web/frontend/js/shared/svgs/building-compliance-green.svg
+  services/web/frontend/js/shared/svgs/cog-pen-green.svg
+  services/web/frontend/js/shared/svgs/digital-science.svg
+  services/web/frontend/js/shared/svgs/sparkle-2-stars.svg
+  services/web/frontend/js/shared/svgs/sparkle-small-green.svg
+  services/web/frontend/js/shared/svgs/sparkle-small-white.svg
+  services/web/frontend/js/shared/svgs/sparkle.svg
+
+  services/web/frontend/js/features/subscription/images/pause-duck.svg
+  services/web/frontend/js/features/subscription/images/star-gradient.svg
+  services/web/frontend/js/features/share-project-modal/images/add-more-editors.svg
+  services/web/frontend/js/features/review-panel/images/teaser-track-changes.gif
+  services/web/frontend/js/features/project-list/images/browse-templates.svg
+  services/web/frontend/js/features/project-list/images/clp-banner.png
+  services/web/frontend/js/features/project-list/images/cop-banner.png
+  services/web/frontend/js/features/project-list/images/create-a-new-project.svg
+  services/web/frontend/js/features/project-list/images/inr-banner.png
+  services/web/frontend/js/features/project-list/images/learn-latex.svg
+  services/web/frontend/js/features/project-list/images/mxn-banner.png
+  services/web/frontend/js/features/project-list/images/pen-banner.png
+
+  services/web/cypress/fixtures/images/gradient.png
+
+  services/web/public/img/ol-icons/review-icon-dark-theme.svg
+  services/web/public/img/ol-icons/review-icon-light-theme.svg

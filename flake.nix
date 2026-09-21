@@ -13,8 +13,11 @@
         packages = [
           pkgs.nodejs_26
           # for tools/logo
-          pkgs.python3
-          pkgs.inkscape
+          (pkgs.python313.withPackages (python-pkgs: [
+            python-pkgs.pyyaml
+            python-pkgs.pillow
+          ]))
+          pkgs.icoutils
         ];
       };
 
